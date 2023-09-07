@@ -1,8 +1,16 @@
 <template>
-  <Home__Welcome />
-  <Component :is="Counter" />
+  <a @click="view('home')">Home</a>
+  <a>Counter</a>
+
+    <HomeWelcome v-if="page === 'home'" />
+ 
+
+  <counter v-if="page === 'counter' " />
 </template>
 
 <script setup>
-const Counter = resolveComponent("Counter")
+const page = ref("home")
+function view(name) {
+page.value = name
+}
 </script>
