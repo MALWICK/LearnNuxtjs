@@ -1,12 +1,28 @@
 <template>
-  <div>Hello World</div>
   <div>
-    <button>Increment</button>
-    <p></p>
-    <button></button>
+    <div>Hello World</div>
+    <div>
+      <button @click="increment">Increment</button>
+      <p>{{ count }}</p>
+      <button @click="decrement">Decrement</button>
+    </div>
   </div>
 </template>
 
 <script>
-const count = ref(0)
+export default {
+  data() {
+    return {
+      count: 0,
+    };
+  },
+  methods: {
+    increment() {
+      this.count++;
+    },
+    decrement() {
+      this.count--;
+    },
+  },
+};
 </script>
