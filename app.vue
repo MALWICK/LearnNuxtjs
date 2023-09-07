@@ -10,19 +10,25 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const count = ref(0);
+
+    function increment() {
+      count.value++;
+    }
+
+    function decrement() {
+      count.value--;
+    }
+
     return {
-      count: 0,
+      count,
+      increment,
+      decrement
     };
-  },
-  methods: {
-    increment() {
-      this.count++;
-    },
-    decrement() {
-      this.count--;
-    },
   },
 };
 </script>
