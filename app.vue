@@ -1,6 +1,6 @@
 <template>
   <a @click="view('home')">Home</a>
-  <a>Counter</a>
+  <a @click="view('counter')">Counter</a>
 
     <HomeWelcome v-if="page === 'home'" />
  
